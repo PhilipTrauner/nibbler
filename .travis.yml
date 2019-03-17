@@ -1,0 +1,24 @@
+language: python
+python:
+  - "3.7"
+cache:
+  pip: true
+install:
+  - pip install poetry==1.0.0a2
+  - poetry install -v
+script:
+  - poetry run pytest -q tests/
+
+jobs:
+  include:
+    - python: "3.7"
+      dist: xenial
+
+    - stage: linting
+      python: "3.7"
+      dist: xenial
+      install:
+        - pip install pre-commit
+        - pre-commit install-hooks
+      script:
+        - pre-commit run --all-files
