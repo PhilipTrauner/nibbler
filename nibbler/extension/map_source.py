@@ -25,6 +25,7 @@ def map_source(code: CodeType, context: Context) -> CodeType:
 
     wrapped_const_code = CodeType(
         code.co_argcount,
+        code.co_posonlyargcount,
         code.co_kwonlyargcount,
         code.co_nlocals,
         code.co_stacksize,
@@ -86,6 +87,7 @@ def map_source(code: CodeType, context: Context) -> CodeType:
 
     return CodeType(
         code.co_argcount,
+        code.co_posonlyargcount,
         code.co_kwonlyargcount,
         code.co_nlocals,
         code.co_stacksize,

@@ -161,6 +161,7 @@ def inline(code: CodeType, context: Context) -> CodeType:
 
     return CodeType(
         code.co_argcount,
+        code.co_posonlyargcount,
         code.co_kwonlyargcount,
         len(varnames),
         code.co_stacksize,
