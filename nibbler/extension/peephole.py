@@ -20,6 +20,7 @@ def peephole(code: CodeType, context: Context) -> CodeType:
     )
     return CodeType(
         code.co_argcount,
+        code.co_posonlyargcount,
         code.co_kwonlyargcount,
         code.co_nlocals,
         code.co_stacksize,
